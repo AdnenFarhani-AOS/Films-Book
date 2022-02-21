@@ -1,70 +1,81 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Films Book Employees
+## ReactJs - TailwindCss - Sass - ReduxToolkit - ReactRouter 
+![Logo](https://f.top4top.io/p_2243pwc581.png)
+ # Intro :
+  This app is developed as an exemple test for the employees of the Betsson group to give
+          them a quick glimpse of the latest movies in their spare time at work .
+In this version i used REACTJS , TAILWINDCSS , SASS , ReduxToolkit , ReactRouter, to have some beautiful and friendly components to enjoy the app .
+ # Demo :
+ **Live Demo: https://film-book-employees.netlify.app/**
 
-## Available Scripts
+![screenshot](https://e.top4top.io/p_2243odkvx1.jpg)
+ # Setup (FrontEnd)
 
-In the project directory, you can run:
+1- Clone this repo
+```shell
+git clone https://github.com/AdnenFarhani-AOS/Films-Book.git
+cd Films-Book
+```
 
-### `npm start`
+2- Install dependencies
+```shell
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3- Run Server
+```shell
+npm start
 
-The page will reload when you make changes.\
+Open http://localhost:3000 to view it in your browser.
+
+The page will reload when you make changes.
 You may also see any lint errors in the console.
+```
+ # Backend
 
-### `npm test`
+I used Wordpress As a headless cms , to manage the application content : 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Content Type
+```shell
+- Posts ( films ) ,
+- Film Categories 
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## API Reference
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Get all Films
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```http
+  GET https://cms-film.adnenfarhani.tech/wp-json/bf-api/v1/posts 
+```
 
-### `npm run eject`
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | If you want to filter by name
+| `category` | `string` | If you want to filter by c&tegory
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Get Film
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```http
+  GET https://cms-film.adnenfarhani.tech/wp-json/bf-api/v1/posts/{slug} 
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `slug`      | `string` | **Required**. slug of film to fetch |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+#### Get all categories
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```http
+  GET https://cms-film.adnenfarhani.tech/wp-json/bf-api/v1/categories 
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Get Popular films
 
-### Code Splitting
+```http
+  GET https://cms-film.adnenfarhani.tech/wp-json/bf-api/v1/popular_posts 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

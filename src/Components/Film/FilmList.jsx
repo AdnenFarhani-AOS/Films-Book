@@ -10,10 +10,12 @@ const FilmList = () => {
   const dispatch = useDispatch();
   const films = useSelector((state) => state.films.listing);
 
+  // Fetch the list of films
   useEffect(() => {
     dispatch(fetchFilms());
     dispatch(fetchPopularFilms());
   }, [dispatch]);
+
   return (
     <div className=" flex flex-col md:px-16 px-6 py-6 ">
       <Heading />

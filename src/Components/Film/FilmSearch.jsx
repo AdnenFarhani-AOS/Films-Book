@@ -8,10 +8,13 @@ const FilmSearch = () => {
   const [category, setCategory] = useState("");
 
   const categories = useSelector((state) => state.films.categories);
+
+  // Fetch the list of available categories
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
+  // Filter Films based on category and name
   useEffect(() => {
     dispatch(filterFilms([category, title]));
   }, [title, category, dispatch]);

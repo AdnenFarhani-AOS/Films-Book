@@ -8,6 +8,7 @@ const FilmDetails = () => {
   const params = useParams();
   const [film, setFilm] = useState(null);
 
+  // Get Film informations based on slub param
   useEffect(() => {
     const url = `/posts/${params.slug}`;
     api.get(url).then((res) => {

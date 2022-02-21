@@ -1,21 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import api from "../Utils/api";
 
+// Fetch the list of films
 export const fetchFilms = createAsyncThunk("films/fetchFilms", async () => {
   const response = await api.get("/posts");
   const films = response.data;
   return { films };
 });
 
-export const fetchPopularFilms = createAsyncThunk(
-  "films/fetchFilms",
-  async () => {
-    const response = await api.get("/popular_posts");
-    const populars = response.data;
-    return { populars };
-  }
-);
-
+// Fetch the list of categories
 export const fetchCategories = createAsyncThunk(
   "categories/fetchCategories",
   async () => {
@@ -25,6 +18,7 @@ export const fetchCategories = createAsyncThunk(
   }
 );
 
+// Filter Films by name and category
 export const filterFilms = createAsyncThunk(
   "films/filterFilms",
   async (searchInformations) => {
@@ -39,7 +33,17 @@ export const filterFilms = createAsyncThunk(
     return { films };
   }
 );
+// Fetch the list of popular films
+export const fetchPopularFilms = createAsyncThunk(
+  "films/fetchFilms",
+  async () => {
+    const response = await api.get("/popular_posts");
+    const populars = response.data;
+    return { populars };
+  }
+);
 
+// Film Slice
 export const filmsSlice = createSlice({
   name: "films",
   initialState: {
