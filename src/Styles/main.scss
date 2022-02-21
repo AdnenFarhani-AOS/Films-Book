@@ -1,0 +1,54 @@
+@import "./Variables/color.scss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: $lightBlueColor;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin border_tabs {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $secondaryColor;
+  border-radius: 0.5rem;
+}
+.tabs__head {
+  background-color: $whiteColor;
+  @include border_tabs;
+  color: $secondaryColor;
+}
+.tabs__head--is-active {
+  background-color: $whiteColor;
+}
+
+.tabs__body {
+  background-color: $whiteColor;
+  padding: 2rem;
+}
+
+.tabs__head label {
+  cursor: pointer;
+  display: block;
+  padding: 0.5rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"] {
+  &:checked + .tabs__head {
+    background-color: $secondaryColor;
+    color: $whiteColor;
+  }
+}
+
+input[type="radio"] {
+  &:checked + .tabs__head + .tabs__body {
+    display: block;
+  }
+}
